@@ -1,0 +1,21 @@
+<div class="container">
+
+    <table *ngIf="teamResponse.length!=0" class="table table-borderless">
+        <tbody>
+            <tr *ngFor="let res  of teamResponse">
+                <td class="text-center"><img style="height:20px;width:20px;" [src]="res.teams.home.logo" alt="logo"></td>
+                <td class="text-center">{{res.teams.home.name}}</td>
+                <td class="text-center">{{res.goals.home}}</td>
+                <td class="text-center">-</td>
+                <td class="text-center">{{res.goals.away}}</td>
+                <td class="text-center">{{res.teams.away.name}}</td>
+                <td class="text-center"><img style="height:20px;width:20px;" [src]="res.teams.away.logo" alt="logo"></td>
+            </tr>
+
+            <tr>
+                <button (click)="previousPage()" class="btn btn-primary">Back</button>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

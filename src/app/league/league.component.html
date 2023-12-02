@@ -1,0 +1,31 @@
+<div class="container">
+    <table *ngIf="countryData.length!=0" class="table table-bordered minHeight">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Games</th>
+                <th scope="col">W</th>
+                <th scope="col">L</th>
+                <th scope="col">D</th>
+                <th scope="col">Goal Difference</th>
+                <th scope="col">Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let country of countryData.slice(0, 10)">
+                <td class="text-center" scope="row">{{ country.rank }}</td>
+                <td class="text-center"><img [src]="country.team.logo" class="small-image" style="height:20px;width:20px;" alt="logo"></td>
+                <td><a class="team-name" (click)="teamResult(country.team.id)" style="cursor: pointer;">{{ country.team.name }}</a></td>
+                <td>{{ country.all.played }}</td>
+                <td>{{ country.all.win }}</td>
+                <td>{{ country.all.lose }}</td>
+                <td>{{ country.all.draw }}</td>
+                <td>{{ country.goalsDiff }}</td>
+                <td>{{ country.points }}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
